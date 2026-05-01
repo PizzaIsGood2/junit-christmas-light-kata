@@ -11,5 +11,35 @@
 package com.example.project;
 
 public class ChristmasLights {
+	int[][] Lights = new int [5][5];
 
+	public ChristmasLights() {
+		for (int i = 0; i < 5; i++) {
+    		for (int j = 0; j < 5; j++) {
+        		Lights[i][j] = 0;
+    		}
+		}
+	}
+
+	public void TurnOnRange(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; i++) {
+			for (int j = y1; j <= y2; j++) {
+				Lights[i][j] = 1;
+			}
+		}
+	}
+
+	public int GetToggledLights() {
+		int numToggledLights = 0;
+
+		for (int i = 0; i < 5; i++) {
+    		for (int j = 0; j < 5; j++) {
+        		if (Lights[i][j] == 1) {
+					numToggledLights += 1;
+				}
+    		}
+		}
+
+		return numToggledLights;
+	}
 }

@@ -21,6 +21,10 @@ class ChristmasLightsTests {
 
 	@Test
 	void testNeighbourPoints() {
-		assertEquals(2, ChristmasLights.TurnOn(0, 0, 0, 1));
+		ChristmasLights Lights = new ChristmasLights();
+		Lights.TurnOnRange(0, 0, 0, 1);
+
+		System.out.println(Lights.GetToggledLights());
+		assertEquals(2, Lights.GetToggledLights());
 	}
 }
