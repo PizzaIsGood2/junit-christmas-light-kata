@@ -27,4 +27,13 @@ class ChristmasLightsTests {
 		System.out.println(Lights.GetToggledLights());
 		assertEquals(2, Lights.GetToggledLights());
 	}
+
+	@Test
+	void testLargeLightArray() {
+		ChristmasLights Lights = new ChristmasLights();
+		Lights.TurnOnRange(100, 250, 500, 450);
+
+		System.out.println(Lights.GetToggledLights());
+		assertEquals(80601, Lights.GetToggledLights());
+	}
 }
