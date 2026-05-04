@@ -12,6 +12,8 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -35,5 +37,12 @@ class ChristmasLightsTests {
 
 		System.out.println(Lights.GetToggledLights());
 		assertEquals(80601, Lights.GetToggledLights());
+	}
+
+	@Test
+	void testInvalidToggle() {
+		ChristmasLights Lights = new ChristmasLights();
+
+		assertThrows(IllegalArgumentException.class, () -> {Lights.TurnOnRange(100, 250, -500, 450);});
 	}
 }
