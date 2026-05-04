@@ -13,6 +13,12 @@ package com.example.project;
 public class ChristmasLights {
 	int[][] Lights = new int [1000][1000];
 
+	public void ValidateInputs(int x1, int y1, int x2, int y2) {
+		if (x1 < 0 || x2 < 0 || y1 < 0 || y2 < 0) {
+			throw new IllegalArgumentException("Invalid coordinate input, no negative values");
+		} 
+	}
+	
 	public ChristmasLights() {
 		for (int x = 0; x < 1000; x++) {
     		for (int y = 0; y < 1000; y++) {
@@ -22,9 +28,7 @@ public class ChristmasLights {
 	}
 
 	public void TurnOnRange(int x1, int y1, int x2, int y2) {
-		if (x1 < 0 || x2 < 0 || y1 < 0 || y2 < 0) {
-			throw new IllegalArgumentException("Invalid coordinate input, no negative values");
-		}
+		ValidateInputs(x1, y1, x2, y2);
 
 		for (int x = x1; x <= x2; x++) {
 			for (int y = y1; y <= y2; y++) {
