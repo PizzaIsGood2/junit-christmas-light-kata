@@ -14,17 +14,17 @@ public class ChristmasLights {
 	int[][] Lights = new int [1000][1000];
 
 	public ChristmasLights() {
-		for (int i = 0; i < 1000; i++) {
-    		for (int j = 0; j < 1000; j++) {
-        		Lights[i][j] = 0;
+		for (int x = 0; x < 1000; x++) {
+    		for (int y = 0; y < 1000; y++) {
+        		Lights[x][y] = 0;
     		}
 		}
 	}
 
 	public void TurnOnRange(int x1, int y1, int x2, int y2) {
-		for (int i = x1; i <= x2; i++) {
-			for (int j = y1; j <= y2; j++) {
-				Lights[i][j] = 1;
+		for (int x = x1; x <= x2; x++) {
+			for (int y = y1; y <= y2; y++) {
+				Lights[x][y] = 1;
 			}
 		}
 	}
@@ -32,9 +32,9 @@ public class ChristmasLights {
 	public int GetToggledLights() {
 		int numToggledLights = 0;
 
-		for (int i = 0; i < 1000; i++) {
-    		for (int j = 0; j < 1000; j++) {
-        		if (Lights[i][j] == 1) {
+		for (int x = 0; x < 1000; x++) {
+    		for (int y = 0; y < 1000; y++) {
+        		if (Lights[x][y] == 1) {
 					numToggledLights += 1;
 				}
     		}
