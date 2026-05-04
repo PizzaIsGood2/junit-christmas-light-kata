@@ -11,11 +11,11 @@
 package com.example.project;
 
 public class ChristmasLights {
-	int[][] Lights = new int [5][5];
+	int[][] Lights = new int [1000][1000];
 
 	public ChristmasLights() {
-		for (int i = 0; i < 5; i++) {
-    		for (int j = 0; j < 5; j++) {
+		for (int i = 0; i < 1000; i++) {
+    		for (int j = 0; j < 1000; j++) {
         		Lights[i][j] = 0;
     		}
 		}
@@ -32,8 +32,8 @@ public class ChristmasLights {
 	public int GetToggledLights() {
 		int numToggledLights = 0;
 
-		for (int i = 0; i < 5; i++) {
-    		for (int j = 0; j < 5; j++) {
+		for (int i = 0; i < 1000; i++) {
+    		for (int j = 0; j < 1000; j++) {
         		if (Lights[i][j] == 1) {
 					numToggledLights += 1;
 				}
