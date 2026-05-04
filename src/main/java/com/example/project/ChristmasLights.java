@@ -22,6 +22,10 @@ public class ChristmasLights {
 	}
 
 	public void TurnOnRange(int x1, int y1, int x2, int y2) {
+		if (x1 < 0 || x2 < 0 || y1 < 0 || y2 < 0) {
+			throw new IllegalArgumentException("Invalid coordinate input, no negative values");
+		}
+
 		for (int x = x1; x <= x2; x++) {
 			for (int y = y1; y <= y2; y++) {
 				Lights[x][y] = 1;

@@ -18,6 +18,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ChristmasLightsTests {
 
@@ -43,6 +44,6 @@ class ChristmasLightsTests {
 	void testInvalidToggle() {
 		ChristmasLights Lights = new ChristmasLights();
 
-		assertThrows(IllegalArgumentException.class, () -> {Lights.TurnOnRange(100, 250, -500, 450);});
+		assertThrows(IllegalArgumentException.class, () -> Lights.TurnOnRange(100, 250, -500, 450), "Invalid coordinate input, no negative values");
 	}
 }
